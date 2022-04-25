@@ -9,6 +9,8 @@ namespace GrimdarkFuture.MonoGame
         [STAThread]
         static void Main()
         {
+
+			// Dependency Injection, yay!
 			var serviceProvider = 
 				new ServiceCollection()
 					.ConfigureServices()
