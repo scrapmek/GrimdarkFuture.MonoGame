@@ -54,13 +54,13 @@ namespace GrimdarkFuture.Application
 
 		private void HandleRightClick(MouseState mouseState, System.Collections.Generic.IEnumerable<IMouseInteraction> mouseOver)
 		{
-			foreach (var item in entityCollection.GetEntitiesByType<IRightClickInteraction>())
+			foreach (var item in entityCollection.GetEntitiesByType<IGlobalRightClickInteraction>())
 				item.OnRightMouseClick(mouseState.Position, mouseOver);
 		}
 
 		public void HandleLeftClick(MouseState mouseState, System.Collections.Generic.IEnumerable<IMouseInteraction> mouseOver)
 		{
-			foreach (var item in entityCollection.GetEntitiesByType<ILeftClickInteraction>())
+			foreach (var item in entityCollection.GetEntitiesByType<IGlobalLeftClickInteraction>())
 				item.OnLeftMouseClick(mouseState.Position, mouseOver);
 		}
 	}

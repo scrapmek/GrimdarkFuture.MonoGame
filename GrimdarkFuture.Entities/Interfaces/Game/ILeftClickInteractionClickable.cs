@@ -3,12 +3,12 @@ using Microsoft.Xna.Framework;
 
 namespace GrimdarkFuture.Entities.Interfaces
 {
-	public interface ILeftClickInteraction : IMouseInteraction
+	public interface IGlobalLeftClickInteraction : IMouseInteraction
 	{
 		void OnLeftMouseClick(Point point, IEnumerable<IMouseInteraction> mouseOver);
 	}
 
-	public interface IRightClickInteraction : IMouseInteraction
+	public interface IGlobalRightClickInteraction : IMouseInteraction
 	{
 		void OnRightMouseClick(Point point, IEnumerable<IMouseInteraction> mouseOver);
 	}

@@ -1,4 +1,5 @@
-﻿using GrimdarkFuture.Mechanics.Models;
+﻿using System.Collections.Generic;
+using GrimdarkFuture.Mechanics.Models;
 
 namespace GrimdarkFuture.Mechanics.Interfaces
 
@@ -9,5 +10,7 @@ namespace GrimdarkFuture.Mechanics.Interfaces
 		int Quality { get; }
 		int? Defense { get; }
 		int Health { get; }
+
+		IEnumerable<IWeapon> Weapons { get; }
 	}
 }

@@ -1,8 +1,12 @@
-﻿namespace GrimdarkFuture.Mechanics.Interfaces
+﻿using GrimdarkFuture.Mechanics.Models;
+
+namespace GrimdarkFuture.Mechanics.Interfaces
 {
 	public interface IModel : IStatBlock
 	{
-		public IUnit Target { get; set; }
+		IUnit Target { get; set; }
+
+		Faction Faction { get; }
 
 		void Flee();
 

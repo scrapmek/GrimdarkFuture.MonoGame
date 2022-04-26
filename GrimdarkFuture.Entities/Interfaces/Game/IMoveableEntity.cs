@@ -5,7 +5,6 @@ namespace GrimdarkFuture.Entities.Interfaces
 {
 	public interface IMoveableEntity : IPositionableEntity
 	{
-		public int AnimatedMoveSpeed { get; }
 		public Vector2 Destination { get; set; }
 	}
 }

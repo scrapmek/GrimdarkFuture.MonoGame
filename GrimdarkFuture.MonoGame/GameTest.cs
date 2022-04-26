@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using GrimdarkFuture.Application;
+using GrimdarkFuture.Application.Helpers;
 using GrimdarkFuture.Entities;
 using GrimdarkFuture.Entities.Interfaces;
+using GrimdarkFuture.Mechanics.Models;
 using GrimdarkFuture.MonoGame.Config;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Xna.Framework;
@@ -39,6 +42,16 @@ namespace GrimdarkFuture.MonoGame
         {
             // TODO: Add your initialization logic here
 			this.Window.AllowUserResizing = true;
+			this.store.Create(new List<IGameEntity>() { 
+				new SwordBrethren(
+					new Vector2(
+						new InchMeasure(10).GameDistance,
+						new InchMeasure(10).GameDistance)
+					), 
+				new ChaosSpaceMarineHavoc(
+					new Vector2(
+						new InchMeasure(30).GameDistance,
+						new InchMeasure(20).GameDistance)) });
             base.Initialize();
         }
 
@@ -46,7 +59,6 @@ namespace GrimdarkFuture.MonoGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			this.store.Create(new List<IGameEntity>() { new SpaceMarine(), new SpaceMarine() });
 			this.store.LoadAssets(Content);
             // TODO: use this.Content to load your game content here
         }
@@ -70,9 +82,16 @@ namespace GrimdarkFuture.MonoGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-			renderer.Render(this.spriteBatch);
+			this.spriteBatch.Begin();
+			foreach (var item in Enumerable.Range(0,100))
+			{
+				spriteBatch.DrawLine(new Vector2(new InchMeasure(item).GameDistance,0),new Vector2(new InchMeasure(item).GameDistance,int.MaxValue), Color.Gray);
+				spriteBatch.DrawLine(new Vector2( 0,new InchMeasure(item).GameDistance), new Vector2(int.MaxValue, new InchMeasure(item).GameDistance), Color.Gray);
+			}
 
-            base.Draw(gameTime);
+			renderer.Render(this.spriteBatch);
+			spriteBatch.End();
+			base.Draw(gameTime);
         }
     }
 }

@@ -16,10 +16,10 @@ namespace GrimdarkFuture.Application
 
 		public void Render(SpriteBatch spriteBatch)
 		{
-			spriteBatch.Begin();
-			foreach (var item in entityStore.GetEntitiesByType<IRenderableEntity>())
-				spriteBatch.Draw(item.Texture, item.Position - item.TexturePositionOffset, Color.White);
-			spriteBatch.End();
+			
+			foreach (var item in entityStore.GetEntitiesByType<IGameEntity>())
+				item.Draw(spriteBatch);
+			
 		}
 	}
 
