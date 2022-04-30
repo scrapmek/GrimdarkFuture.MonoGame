@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
-namespace GrimdarkFuture.Entities.Interfaces
+namespace GrimdarkFuture.Entities.Interfaces.Game
 {
 	public interface IGlobalLeftClickInteraction : IMouseInteraction
 	{
-		void OnLeftMouseClick(Point point, IEnumerable<IMouseInteraction> mouseOver);
+		void OnGlobalLeftMouseClick(Point point, IEnumerable<IMouseInteraction> mouseOver);
 	}
 
 	public interface IGlobalRightClickInteraction : IMouseInteraction
 	{
-		void OnRightMouseClick(Point point, IEnumerable<IMouseInteraction> mouseOver);
+		void OnGlobalRightMouseClick(Point point, IEnumerable<IMouseInteraction> mouseOver);
 	}
 }

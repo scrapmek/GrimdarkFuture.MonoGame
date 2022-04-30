@@ -6,17 +6,19 @@ namespace GrimdarkFuture.Entities.Models
 {
 	public static class DiceProbabilitySpace
 	{
-		public static IEnumerable<KeyValuePair<bool, string>> RollToHit(int target) => RollDice(roll => roll >= target, success => success ? "Hit" : "Missed");
+		public static IEnumerable<KeyValuePair<bool, string>> RollDice(Func<int, bool> successFunction, Func<bool, string> messageFunction, int diceSize = 6) => Enumerable.Range(1, diceSize).Select(x => new KeyValuePair<bool, string>(successFunction(x), messageFunction(successFunction(x))));
 
 		public static IEnumerable<KeyValuePair<bool, string>> RollSave(int? armourSave, int? weaponAP, int? invulnerableSave)
 		{
-			var useArmourSave = !invulnerableSave.HasValue || (armourSave ?? 7) - (weaponAP ?? 0) <= invulnerableSave.Value;
+			bool useArmourSave = !invulnerableSave.HasValue || (armourSave ?? 7) - (weaponAP ?? 0) <= invulnerableSave.Value;
 
 			if (useArmourSave)
 				return RollDice(roll => roll >= (armourSave ?? 7) - (weaponAP ?? 0), success => success ? "Armour save" : "Armour save failed");
 			else
 				return RollDice(roll => roll >= invulnerableSave.Value, success => success ? "Invulnerable save!" : "Invulnerable save failed");
 		}
+
+		public static IEnumerable<KeyValuePair<bool, string>> RollToHit(int target) => RollDice(roll => roll >= target, success => success ? "Hit" : "Missed");
 
 		public static IEnumerable<KeyValuePair<bool, string>> RollToWound(int strength, int toughness)
 		{
@@ -36,7 +38,5 @@ namespace GrimdarkFuture.Entities.Models
 
 			return RollDice(roll => roll >= targetRoll, success => success ? "Wound" : "Failed to wound");
 		}
-
-		public static IEnumerable<KeyValuePair<bool, string>> RollDice(Func<int, bool> successFunction, Func<bool, string> messageFunction, int diceSize = 6) => Enumerable.Range(1, diceSize).Select(x => new KeyValuePair<bool, string>(successFunction(x), messageFunction(successFunction(x))));
 	}
 }

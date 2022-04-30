@@ -1,6 +1,4 @@
-﻿using GrimdarkFuture.Entities.Models;
-
-namespace ShootingCalculator
+﻿namespace GrimdarkFuture.Entities.Models
 {
 	public class MeleeAttackResult : AttackResult
 	{

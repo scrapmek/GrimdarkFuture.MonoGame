@@ -1,4 +1,4 @@
-﻿namespace GrimdarkFuture.Entities.Interfaces
+﻿namespace GrimdarkFuture.Entities.Interfaces.Game
 {
 	public interface ISelectable
 	{

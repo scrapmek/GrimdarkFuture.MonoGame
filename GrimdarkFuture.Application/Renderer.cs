@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using GrimdarkFuture.Entities.Interfaces;
-using Microsoft.Xna.Framework;
+﻿using GrimdarkFuture.Entities.Interfaces.Game;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace GrimdarkFuture.Application
@@ -16,11 +14,8 @@ namespace GrimdarkFuture.Application
 
 		public void Render(SpriteBatch spriteBatch)
 		{
-			
 			foreach (var item in entityStore.GetEntitiesByType<IGameEntity>())
 				item.Draw(spriteBatch);
-			
 		}
 	}
-
 }

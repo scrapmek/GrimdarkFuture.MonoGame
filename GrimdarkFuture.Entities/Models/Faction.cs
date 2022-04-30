@@ -2,7 +2,7 @@
 {
 	public enum Faction
 	{
-		Chaos, 
+		Chaos,
 		BlackTemplars
 	}
 }

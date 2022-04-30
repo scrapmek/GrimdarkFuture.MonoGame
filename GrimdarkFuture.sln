@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrimdarkFuture.Application"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrimdarkFuture.Entities", "GrimdarkFuture.Entities\GrimdarkFuture.Entities.csproj", "{4E38463F-5276-4B30-96D7-8EA8D253F24D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrimdarkFuture.Mechanics", "GrimdarkFuture.Mechanics\GrimdarkFuture.Mechanics.csproj", "{5A0BCDF8-3901-41BA-93F4-36D2259648E1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{4E38463F-5276-4B30-96D7-8EA8D253F24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E38463F-5276-4B30-96D7-8EA8D253F24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E38463F-5276-4B30-96D7-8EA8D253F24D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A0BCDF8-3901-41BA-93F4-36D2259648E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A0BCDF8-3901-41BA-93F4-36D2259648E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A0BCDF8-3901-41BA-93F4-36D2259648E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A0BCDF8-3901-41BA-93F4-36D2259648E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

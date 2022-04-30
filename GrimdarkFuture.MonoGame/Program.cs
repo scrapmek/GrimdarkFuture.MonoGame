@@ -4,21 +4,19 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace GrimdarkFuture.MonoGame
 {
-    public static class Program
-    {
-        [STAThread]
-        static void Main()
-        {
-
+	public static class Program
+	{
+		[STAThread]
+		private static void Main()
+		{
 			// Dependency Injection, yay!
-			var serviceProvider = 
+			var serviceProvider =
 				new ServiceCollection()
 					.ConfigureServices()
 					.BuildServiceProvider();
 
-
-            using (var game = serviceProvider.GetRequiredService<GameTest>())
-                game.Run();
-        }
-    }
+			using (var game = serviceProvider.GetRequiredService<GameTest>())
+				game.Run();
+		}
+	}
 }

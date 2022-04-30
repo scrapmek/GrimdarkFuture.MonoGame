@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using GrimdarkFuture.Entities.Interfaces;
 using GrimdarkFuture.Mechanics.Interfaces;
 
 namespace GrimdarkFuture.Mechanics.Utilities

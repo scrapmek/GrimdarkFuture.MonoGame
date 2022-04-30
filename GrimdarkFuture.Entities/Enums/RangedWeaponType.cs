@@ -1,10 +1,10 @@
-﻿namespace ShootingCalculator
+﻿namespace GrimdarkFuture.Entities.Enums
 {
 	public enum RangedWeaponType
-    {
-        RapidFire,
-        Pistol,
-        Heavy,
-        Assault
-    }
+	{
+		RapidFire,
+		Pistol,
+		Heavy,
+		Assault
+	}
 }

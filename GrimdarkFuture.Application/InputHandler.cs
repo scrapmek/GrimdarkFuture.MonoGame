@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using GrimdarkFuture.Entities.Interfaces;
+using GrimdarkFuture.Entities.Interfaces.Game;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
@@ -52,16 +52,16 @@ namespace GrimdarkFuture.Application
 			this.previousMouseState = mouseState;
 		}
 
-		private void HandleRightClick(MouseState mouseState, System.Collections.Generic.IEnumerable<IMouseInteraction> mouseOver)
-		{
-			foreach (var item in entityCollection.GetEntitiesByType<IGlobalRightClickInteraction>())
-				item.OnRightMouseClick(mouseState.Position, mouseOver);
-		}
-
 		public void HandleLeftClick(MouseState mouseState, System.Collections.Generic.IEnumerable<IMouseInteraction> mouseOver)
 		{
 			foreach (var item in entityCollection.GetEntitiesByType<IGlobalLeftClickInteraction>())
-				item.OnLeftMouseClick(mouseState.Position, mouseOver);
+				item.OnGlobalLeftMouseClick(mouseState.Position, mouseOver);
+		}
+
+		private void HandleRightClick(MouseState mouseState, System.Collections.Generic.IEnumerable<IMouseInteraction> mouseOver)
+		{
+			foreach (var item in entityCollection.GetEntitiesByType<IGlobalRightClickInteraction>())
+				item.OnGlobalRightMouseClick(mouseState.Position, mouseOver);
 		}
 	}
 }

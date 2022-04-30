@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace GrimdarkFuture.Entities.Interfaces
+namespace GrimdarkFuture.Entities.Interfaces.Game
 {
 	public interface IMouseInteraction
 	{

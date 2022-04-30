@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace ShootingCalculator
+namespace GrimdarkFuture.Entities.Models
 {
 	public class WeaponOutOfRangeException : InvalidOperationException
-    {
-        public WeaponOutOfRangeException()
-        {
-        }
-    }
+	{
+		public WeaponOutOfRangeException()
+		{
+		}
+	}
 }
